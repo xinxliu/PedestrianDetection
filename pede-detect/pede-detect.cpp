@@ -63,10 +63,10 @@ int main(int argc,char** argv){
 				//can be applied to the scenario which meets:
 				//in or out but not in and out
 				//the speed of people passing by is neither slow nor fast
-				/*if (average(points0) > average(points1)) {
+				if (average(points0) > average(points1)) {
 
 					numOfPeople -= counter2 - counter1;
-				}*/
+				}
 				//just for test
 				cout << counter2 - counter1 << endl;
 			}
@@ -78,7 +78,7 @@ int main(int argc,char** argv){
 			counter0 = counter1;
 			points1 = points2;
 			counter1 = counter2;
-			//imshow("video test", frame);
+			imshow("video test", frame);
 
 			//waiting for 'q' to quit
 			if (char(waitKey(1) == 'q')) {

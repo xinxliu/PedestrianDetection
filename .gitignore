@@ -3,6 +3,7 @@
 
 # User-specific files
 #for space saving
+*.opendb
 *.avi
 *.mp4
 *.mkv

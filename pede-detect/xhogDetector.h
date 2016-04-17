@@ -28,6 +28,9 @@ public:
 	vector<Point> getPoints() {
 		return foundPoints_;
 	}
+	vector<int> getPointsX() {
+		return foundPointsX_;
+	}
 	Mat& detector();
 	vector<Mat>& detectorMulti();
 	
@@ -36,6 +39,7 @@ private:
 	vector<string> imgNames_;
 	vector<Mat> imgs_;
 	vector<Point> foundPoints_;
+	vector<int> foundPointsX_;
 	vector<vector<Point>> foundMultiPoints_;
 	Mat img_;
 	int counter_;

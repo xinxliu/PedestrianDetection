@@ -13,6 +13,7 @@ void XHOGDetector::getImgs(vector<string>& filenames)
 
 Mat & XHOGDetector::detector()
 {
+	foundPoints_ = vector<Point>();
 	vector<Rect> found,foundFiltered;
 	hog.detectMultiScale(img_, found, 0, Size(8, 8), Size(32, 32), 1.05, 2);
 	size_t i, j;
@@ -29,6 +30,7 @@ Mat & XHOGDetector::detector()
 		int midX = cvRound(r.x + r.width / 2);
 		int midY = cvRound(r.y + r.height/2);
 		foundPoints_.push_back(Point(midX,midY));
+		foundPointsX_.push_back(midX);
 		r.x += cvRound(r.width*0.1);
 		r.width = cvRound(r.width*0.8);
 		r.y += cvRound(r.height*0.07);

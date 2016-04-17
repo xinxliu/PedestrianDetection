@@ -5,7 +5,7 @@ OBJ_DIR=./objs
 
 SOURCE=pede-detect.cpp
 TARGET=$(BIN_DIR)/pede-detect
-OBJ=$(OBJ_DIR)/xhogDetector.o $(OBJ_DIR)/cmdParse.o
+OBJ=$(OBJ_DIR)/xhogDetector.o $(OBJ_DIR)/cmdParse.o $(OBJ_DIR)/utility.o
 OPENCV=`pkg-config --cflags --libs opencv`
 
 $(TARGET):chkobjdir chkbindir $(SOURCE) $(OBJ)
@@ -17,6 +17,8 @@ $(OBJ_DIR)/xhogDetector.o:xhogDetector.h xhogDetector.cpp
 	$(CXX) -c -o $(OBJ_DIR)/xhogDetector.o xhogDetector.cpp
 $(OBJ_DIR)/cmdParse.o:cmdParse.hpp cmdParse.cpp
 	$(CXX) -c -o $(OBJ_DIR)/cmdParse.o cmdParse.cpp
+$(OBJ_DIR)/utility.o:utility.hpp utility.cpp
+	$(CXX) -c -o $(OBJ_DIR)/utility.o utility.cpp
 
 
 chkobjdir:
