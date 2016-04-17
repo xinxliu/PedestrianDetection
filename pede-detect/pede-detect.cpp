@@ -32,17 +32,24 @@ int main(int argc,char** argv){
 		
 		//some definitions here
 		Mat frame;
+		vector<Point> points0;
 		vector<Point> points1;
 		vector<Point> points2;
-		int counter1, counter2 = 0;
+		int counter0, counter1, counter2 = 0;
 		
 		//initial the first frame;
+		capture >> frame;
+		xhog.getImgs(frame);
+		xhog.detector();
+		points0 = xhog.getPoints();
+		counter0 = points0.size();
+		
 		capture >> frame;
 		xhog.getImgs(frame);
 		frame = xhog.detector();
 		points1 = xhog.getPoints();
 		counter1 = points1.size();
-
+		
 		//read and detect
 		while (1) {
 			capture >> frame;
@@ -52,13 +59,15 @@ int main(int argc,char** argv){
 			counter2 = points2.size();
 			if (counter2 != counter1) {
 				//================To do
-				//just for test
+				
 				cout << counter2 - counter1 << endl;
 			}
 
 			//using move semantic will speed it up,but I haven't test it because of 
-			//the time constraint for safety,a copy semantic will be used
+			//the time constraint.for safety,a copy semantic will be used
 			//points1 = std::move(points2);
+			points0 = points1;
+			counter0 = counter1;
 			points1 = points2;
 			counter1 = counter2;
 			//imshow("video test", frame);
@@ -68,7 +77,7 @@ int main(int argc,char** argv){
 				break;
 			}
 		}
-		cout << "number of people is"<<numOfPeople << endl;
+		cout << "number of people is"<< numOfPeople << endl;
 	return 0;	
 	}
 	//picture mode
