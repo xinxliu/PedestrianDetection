@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <IncludePath>C:\Program Files %28x86%29\Opencv\opencv\build\include\opencv2;C:\Program Files %28x86%29\Opencv\opencv\build\include\opencv;C:\Program Files %28x86%29\Opencv\opencv\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Opencv\opencv\build\x64\vc14\lib;$(LibraryPath)</LibraryPath>
+    <_PropertySheetDisplayName>opencv310.MSVS14_x64.user</_PropertySheetDisplayName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>opencv_world310d.lib;opencv_world310.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>
