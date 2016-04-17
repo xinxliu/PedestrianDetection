@@ -3,6 +3,7 @@
 
 # User-specific files
 #for space saving
+/pages
 *.opendb
 *.avi
 *.mp4
