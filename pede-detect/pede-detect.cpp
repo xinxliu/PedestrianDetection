@@ -28,8 +28,8 @@ int main(int argc,char** argv){
 	//video mod
 	if (parser.isVideo()){
 		numOfPeople += parser.getInit();
-		VideoCapture capture(0);
-		capture.set(CV_CAP_PROP_POS_MSEC,100000);
+		VideoCapture capture("./1.mp4");
+		//capture.set(CV_CAP_PROP_POS_MSEC,100000);
 		
 		//some definitions here
 		Mat frame;
