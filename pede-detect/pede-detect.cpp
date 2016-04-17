@@ -5,7 +5,8 @@
 
 #include "cmdParse.hpp"
 #include "xhogDetector.h"
-
+#include "utility.hpp"
+using namespace xutility;
 using namespace std;
 using namespace cv;
 //global definitions
@@ -58,8 +59,15 @@ int main(int argc,char** argv){
 			points2 = xhog.getPoints();
 			counter2 = points2.size();
 			if (counter2 != counter1) {
-				//================To do
-				
+				//================To Do
+				//can be applied to the scenario which meets:
+				//in or out but not in and out
+				//the speed of people passing by is neither slow nor fast
+				/*if (average(points0) > average(points1)) {
+
+					numOfPeople -= counter2 - counter1;
+				}*/
+				//just for test
 				cout << counter2 - counter1 << endl;
 			}
 
